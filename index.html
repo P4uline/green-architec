@@ -1,0 +1,433 @@
+<html>
+<head>
+    <link href=assets/css/bootstrap.min.css rel=stylesheet>
+    <link href=assets/css/bootstrap-theme.min.css rel=stylesheet>
+
+
+    <!-- DES TESTS-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knockout.js demo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/gridstack.js-master/dist/gridstack.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
+    <script src="assets/gridstack.js-master/dist/gridstack.js"></script>
+    <script src="assets/gridstack.js-master/dist/gridstack.jQueryUI.js"></script>
+
+    <style type="text/css">
+        .nature-item {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .grid-stack {
+            background: lightgreen;
+        }
+
+        .grid-stack-item-content {
+            color: #2c3e50;
+            text-align: center;
+            background-color: white;
+        }
+
+        .grid-stack .grid-stack {
+            /*margin: 0 -10px;*/
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .grid-stack .grid-stack .grid-stack-item-content {
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container-fluid">
+    <h1>Calendrier de haies</h1>
+
+
+    <div class="grid-stack">
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="0">
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="1" data-gs-width="12" data-gs-height="1">
+            <div class="grid-stack-item-content"  style="background-color: lightgrey;">
+                <div class="row">
+                    <div class="col-xs-3" style="background-color: lightpink;">printemps</div>
+                    <div class="col-xs-3" style="background-color: lightgoldenrodyellow;">été</div>
+                    <div class="col-xs-3" style="background-color: lightsalmon;">automne</div>
+                    <div class="col-xs-3" style="background-color: white;">hiver</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">mars</div>
+                    <div class="col-xs-1">avril</div>
+                    <div class="col-xs-1">mai</div>
+                    <div class="col-xs-1">juin</div>
+                    <div class="col-xs-1">juillet</div>
+                    <div class="col-xs-1">août</div>
+                    <div class="col-xs-1">septembre</div>
+                    <div class="col-xs-1">octobre</div>
+                    <div class="col-xs-1">novembre</div>
+                    <div class="col-xs-1">décembre</div>
+                    <div class="col-xs-1">janvier</div>
+                    <div class="col-xs-1">février</div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Viorne obier</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/feuille-automne.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/feuille-automne.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-md-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Cornus à fauillage vert et jaune panache</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/branche-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-panache-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-panache-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-panache-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-panache-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-panache-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-automne.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-automne.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Aubépine</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fleur-blanche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fleur-blanche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-branche.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Noisetier</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Prunellier</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/fleur-blanche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fleur-blanche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-bleu.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-bleu.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-bleu-branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-bleu-branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-bleu-branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-bleu-branche.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+         </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Groseiller à fleurs</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fleur-rose.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fleur-rose.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Fusain d'europe</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-automne.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-automne.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-branche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-branche.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Troene</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-jaune.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Noisetier</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Noisetier</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Noisetier</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/branche-chaton.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Cotoneaster</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div id="cotoneaster" class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Cotoneaster</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fruit-rouge-feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Photinia</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/fleur-blanche.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-verte-et-rouge.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="0">
+            <div class="grid-stack-item-content">
+                <div class="row">
+                    <div class="col-md-12">Eleagnus</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                    <div class="col-xs-1"><img src="assets/images/feuille-foncé.png" alt="feuillage" height="42" width="42"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="0">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<ul>
+    <li><a href="views/html/float.html">Float grid demo</a></li>
+    <li><a href="views/html/knockout.html">Knockout.js demo</a></li>
+    <li><a href="views/html/knockout2.html">Knockout.js demo (2)</a></li>
+    <li><a href="views/html/nested.html">Nested grids demo</a></li>
+    <li><a href="views/html/rtl.html">RTL demo</a></li>
+    <li><a href="views/html/serialization.html">Serialization demo</a></li>
+    <li><a href="views/html/two.html">Two grids demo</a></li>
+    <li><a href="views/html/responsive.html">Resize grid (responsive) demo</a></li>
+    <li><a href="views/html/anijs.html">AniJS demo</a></li>
+</ul>
+
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        var options = {
+        };
+        $('.grid-stack').gridstack(options);
+    });
+</script>
+</body>
+</html>
