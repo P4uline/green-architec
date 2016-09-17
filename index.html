@@ -440,8 +440,9 @@
             this.grid = $('.grid-stack').data('gridstack');
 
             this.addNewWidget = function () {
+                var $content = $('<div class="grid-stack-item-content" />').append(getRow("name"));
                 var node = this.item;
-                this.grid.addWidget($('<div class="grid-stack-item-content" />').append(getRow("name")),
+                this.grid.addWidget($('<div></div>').append($content),
                         node.x, node.y, node.width, node.height);
                 return false;
             }.bind(this);
