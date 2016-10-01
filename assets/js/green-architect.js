@@ -33,28 +33,12 @@ var plants = {
     }
 }
 
-function getRow(name) {
-
-    var $row = $('<div/>', {
-        'class':'row'
-    });
+function getPlantRow(plant) {
+    var $row = $('<div/>', { 'class':'row' });
 
     for (i = 0; i < 12; i++) {
-        $row.append(getPlantSeasonByName("cornus-jaune", i));
+        var $plant = $('<div/>', { 'class':'col-xs-1' });
+        $row.append($plant.append('<img src=' + plant.season[i] +' alt="feuillage" height="30" width="30"/>'));
     }
-
-    console.log($row);
     return $row;
-}
-
-function getPlantSeasonByName(name, i) {
-    console.log(plants[name].season[i]);
-    var $child = $('<div/>', {
-        'class':'col-xs-1'
-    });
-    var image = '<img src=' + plants[name].season[i] +' alt="feuillage" height="30" width="30"/>';
-    console.log("image", image);
-    $child.append(image);
-    return $child;
-
 }

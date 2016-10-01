@@ -423,10 +423,6 @@
     <li><a href="views/html/anijs.html">AniJS demo</a></li>
 </ul>
 
-
-
-
-
 <script type="text/javascript">
     $(function () {
         var options = {
@@ -440,10 +436,10 @@
             this.grid = $('.grid-stack').data('gridstack');
 
             this.addNewWidget = function () {
-                var $content = $('<div class="grid-stack-item-content" />').append(getRow("name"));
+                var $content = $('<div class="grid-stack-item-content" />').append(getPlantRow(plants["cornus-jaune"]));
+                var $widget = $('<div></div>').append($content);
                 var node = this.item;
-                this.grid.addWidget($('<div></div>').append($content),
-                        node.x, node.y, node.width, node.height);
+                this.grid.addWidget($widget, node.x, node.y, node.width, node.height);
                 return false;
             }.bind(this);
 
